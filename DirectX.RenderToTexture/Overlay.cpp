@@ -28,8 +28,8 @@ bool Overlay::Load(int window_width, int window_height)
 {
     // Render targets
     D3D11_TEXTURE2D_DESC texDesc;
-    texDesc.Width = 800;
-    texDesc.Height = 600;
+    texDesc.Width = window_width;
+    texDesc.Height = window_height;
     texDesc.MipLevels = 1;
     texDesc.ArraySize = 1;
     texDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
@@ -54,8 +54,8 @@ bool Overlay::Load(int window_width, int window_height)
     // Depth stencil view
     D3D11_TEXTURE2D_DESC descDepth;
     ZeroMemory(&descDepth, sizeof(descDepth));
-    descDepth.Width = 800;
-    descDepth.Height = 600;
+    descDepth.Width = window_width;
+    descDepth.Height = window_height;
     descDepth.MipLevels = 1;
     descDepth.ArraySize = 1;
     descDepth.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
